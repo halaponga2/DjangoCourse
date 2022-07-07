@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 from pathlib import Path
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
+import os
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -28,7 +29,7 @@ SECRET_KEY = 'django-insecure-+6i4v&#^=ug$6of-0=q@aorv@rc1371fjk7$1*s)r=^roid^ti
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['sem4api.std-1387.ist.mospolytech.ru', '127.0.0.1',]
 
 
 # Application definition
@@ -126,6 +127,12 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
@@ -133,7 +140,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 2,
+    'PAGE_SIZE': 6,
     
 }
 

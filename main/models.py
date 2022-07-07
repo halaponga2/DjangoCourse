@@ -8,6 +8,7 @@ class Goods(models.Model):
     manufacturer = models.CharField('Производитель', max_length=200)
     description = models.TextField('Описание')
     price = models.PositiveIntegerField('Цена')
+    image = models.ImageField('Изображение', upload_to='images')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     shops = models.ManyToManyField('Shop', verbose_name='Магазины')
