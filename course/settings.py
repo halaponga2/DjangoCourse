@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-+6i4v&#^=ug$6of-0=q@aorv@rc1371fjk7$1*s)r=^roid^ti
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['sem4api.std-1387.ist.mospolytech.ru', '127.0.0.1',]
+ALLOWED_HOSTS = ['*',]
 
 
 # Application definition
@@ -45,7 +45,9 @@ INSTALLED_APPS = [
     'rest_framework',
     'import_export',
     'simple_history',
+    'corsheaders',
     'main',
+    
 ]
 
 MIDDLEWARE = [
@@ -57,8 +59,12 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'simple_history.middleware.HistoryRequestMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
 
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_CREDENTIALS = True
 ROOT_URLCONF = 'course.urls'
 
 TEMPLATES = [
@@ -127,7 +133,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-
+MEDIA_URL = 'media/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
