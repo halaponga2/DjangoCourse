@@ -14,7 +14,6 @@ from pathlib import Path
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
 import os
-import django_heroku
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -30,7 +29,7 @@ SECRET_KEY = 'django-insecure-+6i4v&#^=ug$6of-0=q@aorv@rc1371fjk7$1*s)r=^roid^ti
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*',]
+ALLOWED_HOSTS = ['sem4api.std-1387.ist.mospolytech.ru', '127.0.0.1',]
 
 
 # Application definition
@@ -128,7 +127,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-MEDIA_URL = 'media/'
+
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
@@ -158,5 +157,3 @@ sentry_sdk.init(
     # django.contrib.auth) you may enable sending PII data.
     send_default_pii=True
 )
-
-django_heroku.settings(locals())
