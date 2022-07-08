@@ -144,11 +144,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-REST_FRAMEWORK = {
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 6,
-    
-}
+
 
 sentry_sdk.init(
     dsn="https://f73613dddc134c6b85c23c7d41cca5ea@o1279084.ingest.sentry.io/6479409",
