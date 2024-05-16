@@ -64,6 +64,7 @@ MIDDLEWARE = [
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True
 ROOT_URLCONF = 'course.urls'
+CSRF_TRUSTED_ORIGINS = ['https://*.railway.app']
 
 TEMPLATES = [
     {
@@ -133,7 +134,8 @@ STATIC_URL = 'static/'
 
 MEDIA_URL = 'media/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
